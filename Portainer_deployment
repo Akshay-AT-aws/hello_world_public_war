@@ -1,0 +1,16 @@
+# Install docker on linux environment
+
+sudo yum install docker docker-ce 
+
+#INSTALL PORTAINER ON UBUNTU TUTORIAL
+#First, you need to install Docker on VM. create docker volume for portainer
+
+docker volume create portainer_data
+
+#Then we can simply launch the Docker container.
+
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+##Main page URL available below
+
+https://www.the-digital-life.com/portainer-ubuntu-tutorial/
